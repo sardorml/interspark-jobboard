@@ -14,4 +14,16 @@ export class JobService {
   getJobs(): Observable<Job[]> {
     return this.http.get<Job[]>(this.ApiUrl);
   }
+  deleteJob(id: string) {
+    return this.http.delete(this.ApiUrl + `/${id}`);
+  }
+  addJob(job: Job) {
+    return this.http.post(this.ApiUrl, job);
+  }
+  getJobDetail(id: string) {
+    return this.http.get<Job>(this.ApiUrl + `/${id}`);
+  }
+  updateJob(id: string, job: Job) {
+    return this.http.put(this.ApiUrl + `/${id}`, job);
+  }
 }

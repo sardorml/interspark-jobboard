@@ -7,14 +7,19 @@ export const routes: Routes = [
   { path: '', redirectTo: 'jobs', pathMatch: 'full' },
   {
     path: 'jobs',
-    component: JobsComponent,
-  },
-  {
-    path: 'jobs/new',
-    component: NewJobComponent,
-  },
-  {
-    path: 'jobs/:id',
-    component: JobDetailComponent,
+    children: [
+      {
+        path: '',
+        component: JobsComponent,
+      },
+      {
+        path: 'new',
+        component: NewJobComponent,
+      },
+      {
+        path: ':id',
+        component: JobDetailComponent,
+      },
+    ],
   },
 ];

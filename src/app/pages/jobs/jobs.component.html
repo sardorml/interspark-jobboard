@@ -6,7 +6,7 @@
     }
   } @else {
     @for (item of jobs; track item.id) {
-      <app-job-item [jobItem]="item"> </app-job-item>
+      <app-job-item [jobItem]="item" [routerLink]="item.id"> </app-job-item>
     }
   }
   <app-button [text]="'Add New Position'" routerLink="/jobs/new"></app-button>

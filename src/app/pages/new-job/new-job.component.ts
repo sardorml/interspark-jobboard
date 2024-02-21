@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { InputComponent } from '../../components/input/input.component';
-import { Input } from '../../interfaces/input.type';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../components/button/button.component';
 import { DateInputComponent } from '../../components/date-input/date-input.component';
 import { FormFields } from '../../globals';
+import { JobService } from '../../services/job.service';
+import { Job } from '../../interfaces/job.type';
 
 @Component({
   selector: 'app-new-job',
@@ -33,8 +34,27 @@ export class NewJobComponent {
     isExpRequired: new FormControl(''),
   });
 
+  constructor(
+    private JobService: JobService,
+    private router: Router,
+  ) {}
+
   submitForm() {
     console.log('submit');
     console.log(this.applyForm.value);
+    const dataset = this.applyForm.value;
+
+    const newJob: Job = {
+      job_number: dataset.jobNumber!,
+      job_title: dataset.title!,
+      job_start_date: dataset.startDate!,
+      job_close_date: dataset.closeDate!,
+      job_notes: dataset.notes!,
+      number_of_openings: dataset.numberOfOpenings!,
+      experience_required: true,
+    };
+    this.JobService.addJob(newJob).subscribe((res) => {
+      this.router.navigate(['/']);
+    });
   }
 }

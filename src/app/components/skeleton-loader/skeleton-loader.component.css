@@ -1,0 +1,12 @@
+.animate-ease-out {
+  animation: ItemAppear 0.4s;
+}
+
+@keyframes ItemAppear {
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+}

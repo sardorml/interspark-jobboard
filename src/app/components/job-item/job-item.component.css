@@ -1,0 +1,9 @@
+.animate-ease-in {
+  animation: ItemAppear 0.2s;
+}
+
+@keyframes ItemAppear {
+  0% {
+    opacity: 0.1;
+  }
+}

@@ -68,7 +68,6 @@ export class JobDetailComponent {
       experience_required: true,
     };
     this.JobService.updateJob(this.id, newJob).subscribe((res) => {
-      console.log(res);
       this.router.navigate(['/']);
     });
   }

@@ -1,0 +1,22 @@
+<p class="mb-4 mt-20 cursor-pointer text-lg text-slate-600" routerLink="/jobs">
+  Go back
+</p>
+
+<form [formGroup]="applyForm" class="flex flex-col" (submit)="submitForm()">
+  @for (field of formFields; track field.name) {
+    @if (field.name == "startDate" || field.name == "closeDate") {
+      <app-date-input
+        [name]="field.name"
+        [title]="field.title"
+      ></app-date-input>
+    } @else {
+      <app-input
+        [name]="field.name"
+        [title]="field.title"
+        [placeholder]="field.placeholder"
+      ></app-input>
+    }
+  }
+
+  <app-button text="Submit"></app-button>
+</form>

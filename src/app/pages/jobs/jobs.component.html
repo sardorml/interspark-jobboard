@@ -1,0 +1,13 @@
+<main>
+  <p class="mb-4 mt-20 text-lg text-slate-600">Open job positions</p>
+  @if (isLoading) {
+    @for (i of [0, 1, 2]; track i) {
+      <app-skeleton-loader></app-skeleton-loader>
+    }
+  } @else {
+    @for (item of jobs; track item.id) {
+      <app-job-item [jobItem]="item"> </app-job-item>
+    }
+  }
+  <app-button [text]="'Add New Position'" routerLink="/jobs/new"></app-button>
+</main>

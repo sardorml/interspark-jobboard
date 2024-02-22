@@ -5,9 +5,13 @@
   <div class="p-5" (click)="clickJob()">
     <h1 class="text-xl text-slate-800">{{ jobItem.job_title }}</h1>
     <p class="text-lg text-slate-600">{{ jobItem.job_notes }}</p>
-    <div class="text-base font-medium text-slate-600">
+    <div class="text-base font-medium text-slate-800">
       <span>{{ jobItem.job_start_date }}</span> -
       <span>{{ jobItem.job_close_date }}</span>
+    </div>
+    <div class="text-base font-medium text-slate-600">
+      <span>Open positions: </span>
+      <span>{{ jobItem.number_of_openings }}</span>
     </div>
   </div>
   <div

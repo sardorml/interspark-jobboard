@@ -6,7 +6,7 @@
       "job_start_date": "2022-12-12",
       "job_close_date": "2023-12-12",
       "job_notes": "Frontend Developer(Angular)",
-      "number_of_openings": "3",
+      "number_of_openings": "2",
       "experience_required": true,
       "id": "1"
     },
@@ -29,16 +29,6 @@
       "experience_required": true,
       "number_of_openings": 1,
       "job_notes": "Backend Developer(Java)"
-    },
-    {
-      "id": "09e5",
-      "job_number": "asd",
-      "job_title": "asd",
-      "job_start_date": "2024-02-16",
-      "job_close_date": "2024-02-02",
-      "job_notes": "asd",
-      "number_of_openings": "asd",
-      "experience_required": true
     }
   ]
 }

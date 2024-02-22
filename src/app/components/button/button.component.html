@@ -1,5 +1,8 @@
 <button
-  class="animate-wiggle flex w-full justify-center rounded-lg border bg-lime-500 p-5 text-xl text-white hover:bg-lime-600"
+  [class]="
+    'flex justify-center rounded-lg border bg-[#f4ae00] px-3 py-2 text-base text-white hover:bg-[#dd9e00] ' +
+    buttonClasses
+  "
 >
   {{ text }}
 </button>

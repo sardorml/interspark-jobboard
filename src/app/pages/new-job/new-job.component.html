@@ -1,8 +1,14 @@
-<p class="mb-4 mt-20 cursor-pointer text-lg text-slate-600" routerLink="/jobs">
-  Go back
-</p>
-
 <form [formGroup]="applyForm" class="flex flex-col" (submit)="submitForm()">
+  <div class="mb-4 mt-20 flex items-center justify-between">
+    <div class="text-slate-600">
+      <fa-icon [icon]="faChevronLeft" size="lg"></fa-icon>
+      <span class="cursor-pointer text-base" routerLink="/jobs"> Go back </span>
+    </div>
+    <app-button
+      text="Submit new position"
+      buttonClasses="bg-sky-600 hover:bg-sky-700"
+    ></app-button>
+  </div>
   @for (field of formFields; track field.name) {
     @if (field.name == "startDate" || field.name == "closeDate") {
       <app-date-input
@@ -17,6 +23,4 @@
       ></app-input>
     }
   }
-
-  <app-button text="Submit"></app-button>
 </form>

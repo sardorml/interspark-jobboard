@@ -1,6 +1,23 @@
 <div
-  class="boder-slate-200 animate-ease-in mb-4 cursor-pointer rounded-lg border p-5"
+  class="boder-slate-200 mb-4 flex cursor-pointer justify-between rounded-lg border"
+  [style.view-transition-name]="'job' + jobItem.id"
 >
-  <p class="text-xl text-slate-800">{{ jobItem.job_title }}</p>
-  <p class="text-lg text-slate-600">{{ jobItem.job_notes }}</p>
+  <div class="p-5" (click)="clickJob()">
+    <h1 class="text-xl text-slate-800">{{ jobItem.job_title }}</h1>
+    <p class="text-lg text-slate-600">{{ jobItem.job_notes }}</p>
+    <div class="text-base font-medium text-slate-600">
+      <span>{{ jobItem.job_start_date }}</span> -
+      <span>{{ jobItem.job_close_date }}</span>
+    </div>
+  </div>
+  <div
+    class="group block flex items-center justify-center p-5 hover:bg-rose-50"
+    (click)="deleteJob()"
+  >
+    <fa-icon
+      [icon]="faTrash"
+      size="xl"
+      class="text-slate-400 group-hover:text-rose-600"
+    ></fa-icon>
+  </div>
 </div>

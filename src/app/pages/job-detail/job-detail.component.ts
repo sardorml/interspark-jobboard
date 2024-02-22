@@ -7,6 +7,8 @@ import { DateInputComponent } from '../../components/date-input/date-input.compo
 import { FormFields } from '../../globals';
 import { JobService } from '../../services/job.service';
 import { Job } from '../../interfaces/job.type';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-job-detail',
@@ -17,6 +19,7 @@ import { Job } from '../../interfaces/job.type';
     ReactiveFormsModule,
     ButtonComponent,
     DateInputComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './job-detail.component.html',
   styleUrl: './job-detail.component.css',
@@ -24,6 +27,7 @@ import { Job } from '../../interfaces/job.type';
 export class JobDetailComponent {
   @Input() id = '';
   formFields = FormFields;
+  faChevronLeft = faChevronLeft;
 
   applyForm = new FormGroup({
     jobNumber: new FormControl(''),
